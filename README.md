@@ -2,49 +2,35 @@
 
 An educational machine learning project exploring image classification of grapevine diseases using TensorFlow.
 
-The project focuses on building a Dockerized workflow for training and evaluating a convolutional neural network. Results are intended for learning purposes and are not production-grade.
+The project focuses on building and evaluating a convolutional neural network for grapevine disease detection within a Dockerized workflow. Results are intended for learning purposes and are NOT intended for production use.
 
----
+## Overview
 
-## Getting Started
+- Image classification using TensorFlow
+- Training and evaluation environment with Docker for reproducibility
+- CNN model trained on a grapevine disease dataset from Hugging Face
+- Evaluating performance using classification metrics
 
-### Requirements
-- Docker installed and running  
-- No local Python, TensorFlow, or GPU required  
+## Results
 
-### Dataset
-The dataset is **not included**. Before running, create the following directory structure locally:
+### Training Loss
 
-```
-data/
-train/ (.jpg files named healthy_.jpg or esca_.jpg)
-val/ (.jpg files named healthy_.jpg or esca_.jpg)
-test/ (.jpg files named healthy_.jpg or esca_*.jpg)
-```
+![Training Loss](loss_curve.png)
 
----
+### Training Accuracy
 
-### Build Docker Image
-From the project root:
+![Training Accuracy](accuracy_curve.png)
 
-```bash
-docker build -t grape-cnn .
-```
+## Report
 
----
+Below is a report which includes: the dataset, methodology, implementation, and results.
 
-### Train the Model
-Run training inside Docker (mounts current directory into container):
-```
-docker run --rm -it -v "$(pwd):/workspace" grape-cnn python train.py
-```
-This will train the model and save `grape_model.keras` to the project directory.
+[CSE 168 Lab 3 - Grapevine Disease Detection](./CSE%20168_%20Lab%203%20-%20Grapevine%20Disease%20Detection.pdf)
 
----
+## Repository Structure
 
-### Evaluate the Model
-After training completes:
-```
-docker run --rm -it -v "$(pwd):/workspace" grape-cnn python evaluation.py
-```
-Outputs include test loss, precision, and recall.
+- `train.py`: model training
+- `evaluation.py`: model evaluation
+- `Dockerfile`: Docker container
+- `notebooks/`: experimentation and analysis
+- `data/`: Hugging Face dataset
