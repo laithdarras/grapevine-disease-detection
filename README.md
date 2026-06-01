@@ -1,6 +1,8 @@
 # Grapevine Disease Detection
 
-An educational project exploring image classification of grapevine diseases using **TensorFlow** and **Docker**. This repository demonstrates setting up a containerized training and evaluation workflow for a convolutional neural network. **Results are not production-grade**; the project is for learning purposes.
+An educational machine learning project exploring image classification of grapevine diseases using TensorFlow.
+
+The project focuses on building a Dockerized workflow for training and evaluating a convolutional neural network. Results are intended for learning purposes and are not production-grade.
 
 ---
 
@@ -46,11 +48,3 @@ After training completes:
 docker run --rm -it -v "$(pwd):/workspace" grape-cnn python evaluation.py
 ```
 Outputs include test loss, precision, and recall.
-
----
-
-## Tools & Skills
-- Languages: Python
-- Machine Learning: TensorFlow, Convolutional Neural Networks
-- DevOps / Containerization: Docker
-- Workflow: Training, evaluation, dataset management
